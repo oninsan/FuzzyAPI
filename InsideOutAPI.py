@@ -12,7 +12,7 @@ from tensorflow.keras.utils import to_categorical # type: ignore
 import re
 
 # load the model
-model = load_model('inside_out3.pb')
+model = load_model('inside_out1.pb')
 
 # load the label references
 X_train = pd.read_csv('X_train.csv')
@@ -63,7 +63,7 @@ def predict_emotion():
     final_results.append({"Anger": count_anger})
 
     # fear
-    count_fear = np.count_nonzero((np.array(results) == 'ISFJ') | (np.array(results) == 'ESTJ')) / len(results) * 100
+    count_fear = np.count_nonzero((np.array(results) == 'ISFJ') | (np.array(results) == 'ISTJ')) / len(results) * 100
     final_results.append({"Fear": count_fear})
 
     # disgust
