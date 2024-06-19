@@ -34,7 +34,7 @@ vectorizer = TfidfVectorizer(max_features=5000)
 vectorizer.fit(X_train['posts'])
 
 api = Flask(__name__)
-CORS(api, methods=["POST"], allow_headers=["Content-Type"])
+CORS(api)
 
 @api.route('/api/insideout/predictemotion', methods=['POST'])
 def predict_emotion():
